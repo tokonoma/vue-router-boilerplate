@@ -1,0 +1,85 @@
+//COLORS------------------------------------//
+//BACKGROUNDS-------------------------------//
+//BORDERS
+//BOXSHADOWS--------------------------------//
+//TYPOGRAPHY--------------------------------//
+//--font-families
+//--text transforms
+.uppercase{
+    text-transform: uppercase;
+}
+.underline{
+    text-decoration: underline;
+}
+.no-underline{
+    text-decoration: none;
+}
+.title-case{
+    text-transform: capitalize;
+}
+.italic{
+    font-style: italic;
+}
+.text-center{
+    text-align: center;
+}
+.fontweight-medium{
+    font-weight: 500;
+}
+.fontweight-semibold{
+    font-weight: 600;
+}
+
+
+//FLEX LAYOUTS
+.width-30{
+    width: 30%;
+}
+.width-70{
+    width: 70%;
+}
+
+//MISC
+.clickable{
+    cursor: pointer;
+}
+.opacity-50{
+    opacity: .5;
+}
+.nowrap{
+    white-space: nowrap;
+}
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version*/
+}
+
+//SPACING
+$baseline: 8px;
+
+$properties: (
+    m: "margin",
+    p: "padding"
+);
+
+$facets: (
+    "": "",
+    t: "-top",
+    b: "-bottom",
+    l: "-left",
+    r: "-right"
+);
+
+@each $prefix, $prop in $properties{
+    @each $suffix, $facet in $facets{
+        @for $i from 0 through 12{
+            .#{$prefix}#{$suffix}-x#{$i}{
+                #{$prop}#{$facet}: $baseline*$i !important;
+            }
+        }
+    }
+}

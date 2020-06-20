@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -16,10 +16,35 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => import('./views/About.vue')
+    },
+    {
+      path: '/buzz',
+      name: 'buzz',
+      component: () => import('./views/Buzz.vue')
+    },
+    {
+      path: '/creators',
+      name: 'creators',
+      component: () => import('./views/Creators.vue')
+    },
+    {
+      path: '/disclaimer',
+      name: 'disclaimer',
+      component: () => import('./views/Disclaimer.vue')
+    },
+    {
+      path: '/reading',
+      name: 'reading',
+      component: () => import('./views/Reading.vue')
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
+
+// router.beforeEach((to, from, next) => {
+// })
+
+export default router
