@@ -25,7 +25,7 @@
           However, all of us behind this project were busy working on other projects. As the saying goes, “The problem with working on projects in your spare time is that you never have any spare time!”
         </p>
         <p>
-          Then COVID-19 hit, we decided to convert the app concept into a web site and get it launched before the parks in Orlando and Los Angeles reopened. Please feel free to email any of us if you have any questions or need information:
+          Then COVID-19 hit, we decided to convert the app concept into a web site and get it launched before the original Disneyland reopened. Please feel free to email any of us if you have any questions or need information:
         </p>
         <div class="mb-x4 mt-x4">
           <h2>

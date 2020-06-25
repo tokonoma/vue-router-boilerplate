@@ -13,10 +13,10 @@
           Rather than reinvent the wheel, we are going to let others introduce Buzz Price to you…
         </p>
         <div class="d-flex justify-content-center align-items-start">
-          <img class="mb-x2 info-img" src="~@/assets/buzzroy.jpg">
+          <img class="mb-x2 info-img" src="~@/assets/buzz_walt.jpg">
         </div>
         <div class="text-center mb-x4">
-          Buzz Price with Roy Disney
+          Walt Disney, C.V. Wood, Jr. and Harrison “Buzz” Price share plans for what would become Disneyland in Anaheim, California.
         </div>
         <div class="quote">
           <p>
@@ -28,7 +28,7 @@
         </div>
         <div class="quote-byline mb-x6">
           <a href="https://www.nytimes.com/2010/08/22/business/22price.html" target="_blank">
-            - The New York Times, Aug. 21, 2010
+            &mdash; The New York Times, Aug. 21, 2010
           </a>
         </div>
         <div class="quote">
@@ -50,7 +50,7 @@
         </div>
         <div class="quote-byline mb-x6">
           <a href="https://d23.com/walt-disney-legend/harrison-price/" target="_blank">
-            - D23: Disney Legends
+            &mdash; D23: Disney Legends
           </a>
         </div>
         <div class="quote">
@@ -73,20 +73,17 @@
         </div>
         <div class="quote-byline mb-x6">
           <a href="https://www.latimes.com/archives/la-xpm-2010-aug-17-la-me-buzz-price-20100817-story.html" target="_blank">
-            - The Los Angeles Times, Aug. 17, 2010
+            &mdash; The Los Angeles Times, Aug. 17, 2010
           </a>
         </div>
         <div class="quote">
           <p>
             Buzz Price would be called upon frequently to weigh in on the viability of a Disney project, and he developed a research methodology that suited Walt and Roy&#x2019;s needs. The process that he used when working with Walt was a, &#x201C;Yes, if&#x2026;&#x201D; line of attack. Price said, &#x201C;&#x2018;Yes, if&#x2026;&#x2019; is the approach of a deal maker. It points to what needs to be done to make the possible plausible. &#x201C;No because&#x201D; is the language of a deal killer. Creative people thrive on &#x201C;Yes, if.&#x201D; He added that &#x201C;Walt liked this language.&#x201D;
           </p>
-          <p>
-            Price refined this innovative research process by hosting over 150 design workshops called &#x201C;charrettes,&#x201D; French for &#x201C;little carts.&#x201D; The workshop name was derived from the &#xC9;cole des Beaux-Arts period, when students in Paris would bring their paintings to be judged by their masters in the carts; and in many cases, the artists would still be working on their wet canvases while on the move. In modern usage, a charrette is a process whereby all those affecting and affected by the outcome of a project come together to collaborate on finding solutions. After extensive consideration and discussion, the group can begin to develop a consensus and establish clearly articulated performance goals that are specific, measurable, achievable, realistic, and timely.
-          </p>
         </div>
         <div class="quote-byline mb-x6">
           <a href="https://blooloop.com/harrison-buzz-price-disneyland-gennawey/" target="_blank">
-            - Blooloop, Sept. 11, 2017
+            &mdash; Blooloop, Sept. 11, 2017
           </a>
         </div>
         <div class="quote">
@@ -105,7 +102,7 @@
         </div>
         <div class="quote-byline mb-x6">
           <a href="https://www.waltdisney.org/blog/remembering-harrison-buzz-price" target="_blank">
-            - The Walt Disney Family Museum, Aug. 16, 2010
+            &mdash; The Walt Disney Family Museum, Aug. 16, 2010
           </a>
         </div>
       </main>

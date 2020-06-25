@@ -8,29 +8,32 @@
             back
           </router-link>
         </div>
-        <h1 class="text-center mb-x4">About ask.buzz</h1>
+        <h1 class="text-center mb-x4">About Ask.Buzz</h1>
         <p>
           According to his son David Price, Harrison “Buzz” Price was excellent at crunching numbers in his head. Not everyone of course can accomplish such a task, but he was a wizard at it. This is a great gift to have when you’re in the middle of a planning session and you’re putting numbers up on the white board to stimulate and help focus discussion. He could also pause and draw you into the calculus.
         </p>
         <div class="d-flex justify-content-center mt-x5 align-items-start">
           <div class="speech-bubble">
-            Sometimes when you go only by the numbers, the project is impossible.  When you inject the art, it becomes possible.
+            {{ this.buzzQuotes[this.currentQuoteIndex] }}
           </div>
         </div>
         <div class="d-flex justify-content-center align-items-start">
-          <Buzz medMax />
+          <Buzz medMax @buzzClicked="changeQuote()" />
         </div>
         <p>
-          Buzz often said, “It’s all about the numbers” and his passing in 2010 at 89 years of age, he certainly had not changed that perspective. For industry practitioners that worked closely with him, we recall these as “Buzz Moments” when we were able to see the numbers as he saw them in real time.
+          Buzz often said, “It’s all about the numbers” and at his passing in 2010 at 89 years of age, he certainly had not changed that perspective. For industry practitioners that worked closely with him, we recall these as “Buzz Moments” when we were able to see the numbers as he saw them in real time.
         </p>
         <p>
-          When we first started talking about this web site, this was our goal. We wanted to capture and share these Buzz moments. We wanted a way for industry professionals and others to be able to “Ask Buzz” questions and get his quick feedback just as if he was standing at a white board during a charrette. And we also wanted you to get just a glimpse of his personality. Buzz Price was known for his trademark humor, cutting edge wit and passion. He loved this industry. So, here on Ask.Buzz, you can both ask questions about your project and get a few of what his friends called “Buzzisms” revealed in those speech bubbles. These particular Buzzisms on About.Buzz were compiled from his book Walt’s Revolution By the Numbers and by Bob Rogers of BRC Imagination Arts for David’s book Buzz Stories.
+          When we first started talking about this web site, this was our goal. We wanted to capture and share these moments. We wanted a way for industry professionals and others to be able to “Ask Buzz” questions and get his quick feedback just as if he was standing at a white board during a charrette. And we also wanted you to get just a glimpse of his personality. Buzz Price was known for his trademark humor, cutting edge wit and passion. He loved this industry. So, here on Ask.Buzz, you can both ask questions about your project and get a few of what his friends called “Buzzisms” revealed in those speech bubbles. These particular Buzzisms on About.Buzz were compiled from his book <span class="italic">Walt’s Revolution By the Numbers</span> and by Bob Rogers of BRC Imagination Arts for David’s book <span class="italic">Buzz Stories</span>.
         </p>
         <p>
           If you have others, please email them to us. We’d love to hear ‘em and we can add them to this site.
         </p>
         <p>
           Finally, Ask.Buzz is intended to introduce the legacy of Buzz Price to a new generation of themed entertainment designers and developers. We want them to, in a small way, share our memories of Buzz. While Buzz Price is now gone, his ideas and vision are not.
+        </p>
+        <p>
+          Just click on the animated Buzz Price on this page to see more Buzzisms.
         </p>
       </main>
     </div>
@@ -45,6 +48,15 @@ import AppFooter from '@/components/AppFooter.vue'
 export default {
   data () {
     return {
+      buzzQuotes: [
+        'Sometimes when you go only by the numbers, the project is impossible.  When you inject the art, it becomes possible.',
+        'Use economic feasibility to make the project more successful rather than just raise money.',
+        'Don’t go over budget—yours or your clients.',
+        'The creative concept expands or contracts the achievable.',
+        'Speed can increase quality. Work fast.',
+        'Knowing the right answer and convincing the client are two different things.'
+      ],
+      currentQuoteIndex: 0
     }
   },
   components: {
@@ -53,10 +65,18 @@ export default {
   },
   props: {},
   watch: {},
-  created () {},
+  created () {
+  },
   mounted () {},
   computed: {},
   methods: {
+    changeQuote () {
+      if (this.currentQuoteIndex < (this.buzzQuotes.length - 1)) {
+        this.currentQuoteIndex++
+      } else {
+        this.currentQuoteIndex = 0
+      }
+    }
   }
 }
 </script>

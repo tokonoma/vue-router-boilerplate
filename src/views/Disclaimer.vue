@@ -10,11 +10,11 @@
         </div>
         <h1 class="text-center mb-x4">Roller Coaster Math Disclaimer</h1>
         <p>
-          The Roller Coaster Math helping designers and developers figure out design day numbers is not secret. In fact, Buzz Price published the formulas in his book Walt’s Revolution By the Numbers. Different versions of these formulas can be found on numerous blogs, posts and articles online.
+          The Roller Coaster Math helping designers and developers figure out design day numbers is not secret. In fact, Buzz Price published the formulas in his book <span class="italic">Walt’s Revolution By the Numbers</span>. Different versions of these formulas can be found on numerous blogs, posts and articles online.
         </p>
         <div class="d-flex justify-content-center mt-x5 align-items-start">
           <div class="speech-bubble">
-            Sometimes when you go only by the numbers, the project is impossible.  When you inject the art, it becomes possible.
+            Knowing the right answer and convincing the client are two different things.
           </div>
         </div>
         <div class="d-flex justify-content-center align-items-start">

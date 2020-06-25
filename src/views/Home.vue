@@ -2,7 +2,7 @@
   <div class="buzz-home">
     <div class="d-flex justify-content-center align-items-start">
       <main class="fixed-width-container">
-        <div class="mb-x4 buzz-header">
+        <div class="buzz-header">
           <img class="ask-buzz-hero" src="~@/assets/ask-buzz-header.png">
           <router-link to="/reading" class="more-reading-link">
             <img class="more-reading-img" src="~@/assets/bookcircle.png">
@@ -18,6 +18,9 @@
             <Buzz />
           </div>
           <div class="width-70 form-results-container">
+            <!--  -->
+            <!-- form -->
+            <!--  -->
             <div class="main-form" v-if="!showResults">
               <h2>Will your attraction be seasonal?</h2>
               <h3>{{ seasonalValue }}</h3>
@@ -87,16 +90,18 @@
               <label class="h2" for="desired-attendance">
                 What is your desired annual attendance?
                 <br>
-                <span class="result-description">(0 - 15,000,000)</span>
+                <span class="result-description">(0 - 50,000,000)</span>
               </label>
               <input
                 type="tel"
+                @input="formatAttendanceDuringInput()"
                 id="desired-attendance"
                 name="desired-attendance"
                 placeholder="e.g. 3,000,000"
                 class="attendance-input"
                 v-model="attendanceValue"
                 :class="{ 'has-error': formError }"
+                autocomplete="off"
               >
               <p class="error-flag" v-if="formError">Please provide a number for desired attendance</p>
               <div class="d-flex justify-content-center mt-x6">
@@ -105,6 +110,9 @@
                 </button>
               </div>
             </div>
+            <!--  -->
+            <!-- results -->
+            <!--  -->
             <div class="main-results" v-else>
               <div class="result-group">
                 <div class="d-flex results-header align-items-start">
@@ -114,7 +122,7 @@
                   </button>
                 </div>
                 <div class="attendance-value">
-                  {{ formatNumber(attendanceValue) }}
+                  {{ formatNumber(results.desiredAttendance) }}
                 </div>
               </div>
               <div class="result-group">
@@ -155,65 +163,62 @@
             </div>
           </div>
         </div>
+        <!--  -->
+        <!-- more results -->
+        <!--  -->
         <div class="more-questions" v-if="showResults">
           <div class="more-questions-header">
             <i class="fas fa-arrow-down mr-x4"></i> More Questions <i class="fas fa-arrow-down ml-x4"></i>
           </div>
-          <div class="more-questions-circles d-flex align-items-center justify-content-center">
-            <Buzz medMax />
+          <!-- vertical center with align-items-center -->
+          <div class="more-questions-circles d-flex justify-content-center">
+            <div>
+              <div class="speech-bubble">
+                Life is too short to work on something doomed to fail.
+              </div>
+              <Buzz medMax />
+            </div>
             <BuzzCircle
               size="180px"
               question="What will be our overall theoretical hourly capacity?"
               questionSize="18px"
               :answer="formatNumber(results.hourlyCapacity)"
               units="guests"
-              answerSize="40px"
-              top="24px"
+              answerSize="32px"
+              top="40px"
               left="10%"
               dark
             />
             <BuzzCircle
-              size="160px"
-              question="How big does our attraction need to be?"
-              questionSize="20px"
-              :answer="formatNumber(results.attractionSize, false, true)"
-              :units="measureValue"
-              answerSize="32px"
-              top="140px"
-              right="-8px"
-            />
-            <BuzzCircle
-              size="186px"
-              question="How many total rides and experiences should my attraction have?"
-              questionSize="18px"
-              :answer="attendanceValue"
-              answerSize="40px"
-              bottom="80px"
-              right="-12px"
-              dark
-              decorative
-            />
-            <BuzzCircle
-              size="140px"
-              question="How much space will we need for parking?"
-              questionSize="16px"
-              :answer="formatNumber(results.parkingSpace, false, true)"
-              :units="measureValue"
-              answerSize="24px"
-              bottom="4px"
-              left="50%"
-              marginLeft="-68px"
-            />
-            <BuzzCircle
-              size="168px"
+              size="180px"
               question="How many seats for F&amp;B will we need?"
-              questionSize="20px"
+              questionSize="18px"
               :answer="formatNumber(results.foodSeats)"
               units="seats"
-              answerSize="36px"
+              answerSize="32px"
               bottom="200px"
               left="0px"
               dark
+            />
+            <BuzzCircle
+              size="180px"
+              question="How big does our attraction need to be?"
+              questionSize="18px"
+              :answer="formatNumber(results.attractionSize, false, true)"
+              :units="measureValue"
+              answerSize="32px"
+              top="220px"
+              right="0px"
+            />
+            <BuzzCircle
+              size="180px"
+              question="How much space will we need for parking?"
+              questionSize="18px"
+              :answer="formatNumber(results.parkingSpace, false, true)"
+              :units="measureValue"
+              answerSize="32px"
+              bottom="24px"
+              right="10%"
             />
           </div>
           <div class="d-flex justify-content-center mt-x4">
@@ -230,11 +235,15 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import VueMask from 'v-mask'
 import BuzzCircle from '@/components/BuzzCircle.vue'
 import AppFooter from '@/components/AppFooter.vue'
 import Buzz from '@/components/Buzz.vue'
 import VueSlider from 'vue-slider-component'
 import 'vue-slider-component/theme/material.css'
+
+Vue.use(VueMask)
 
 let markStyle = {
   width: '8px',
@@ -356,6 +365,7 @@ export default {
       formError: false,
       showResults: false,
       results: {
+        desiredAttendance: 0,
         peakMonth: 0,
         peakWeek: 0,
         peakDay: 0,
@@ -370,7 +380,7 @@ export default {
       },
       buzzQuotes: [
         'Let me ask you a few questions first, okay?',
-        'Life is too short to work on something doomed to fail.'
+        'Remember, you don’t build the church for Easter Sunday.'
       ],
       currentQuote: ''
     }
@@ -387,6 +397,12 @@ export default {
   methods: {
     calculateInput () {
       if (this.attendanceValue) {
+        // convert input into number
+        this.results.desiredAttendance = this.attendanceValue
+        this.results.desiredAttendance = this.results.desiredAttendance.replace(/\D/g, '')
+        this.results.desiredAttendance = parseInt(this.results.desiredAttendance)
+        // scroll back to top
+        this.currentQuote = this.buzzQuotes[1]
         window.scrollTo({ top: 0, behavior: 'smooth' })
         let peakMonthPercent = 0
         switch (this.seasonalValue) {
@@ -400,7 +416,7 @@ export default {
             peakMonthPercent = 0.14
             break
         }
-        this.results.peakMonth = this.attendanceValue * peakMonthPercent
+        this.results.peakMonth = this.results.desiredAttendance * peakMonthPercent
         this.results.peakWeek = this.results.peakMonth / 4.43
         this.results.peakDay = this.results.peakWeek * 0.20
         this.results.designDay = this.results.peakDay * 0.80
@@ -453,6 +469,17 @@ export default {
     },
     editInput () {
       this.showResults = false
+      this.currentQuote = this.buzzQuotes[0]
+    },
+    formatAttendanceDuringInput () {
+      if (this.attendanceValue) {
+        let attendanceValueDynamicFormat = this.attendanceValue.replace(/\D/g, '')
+        attendanceValueDynamicFormat = parseInt(attendanceValueDynamicFormat)
+        if (attendanceValueDynamicFormat > 50000000) {
+          attendanceValueDynamicFormat = 50000000
+        }
+        this.attendanceValue = attendanceValueDynamicFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+      }
     },
     formatNumber (x, rounding = true, conversion = false) {
       let formattedValue = x
@@ -491,6 +518,7 @@ export default {
       this.measureValue = 'acres'
       this.attendanceValue = null
       this.showResults = false
+      this.currentQuote = this.buzzQuotes[0]
       this.results = {
         peakMonth: 0,
         peakWeek: 0,
@@ -515,8 +543,9 @@ export default {
   overflow-x: hidden;
   .buzz-header{
     position: relative;
+    margin-bottom: 40px;
     img.ask-buzz-hero{
-      width: 180px;
+      width: 140px;
       z-index: -10;
       position: relative;
     }
@@ -525,7 +554,7 @@ export default {
       right: -12px;
       top: -4px;
       img.more-reading-img{
-        width: 160px;
+        width: 200px;
       }
     }
   }
@@ -621,8 +650,9 @@ export default {
   // Small devices (landscape phones, 576px and up)
   @media (min-width: 576px) {
     .buzz-header{
+      margin-bottom: 60px;
       img.ask-buzz-hero{
-        width: 280px;
+        width: 220px;
         z-index: -10;
         position: relative;
       }
@@ -630,7 +660,7 @@ export default {
         right: 0px;
         top: -4px;
         img.more-reading-img{
-          width: 240px;
+          width: 260px;
         }
       }
     }

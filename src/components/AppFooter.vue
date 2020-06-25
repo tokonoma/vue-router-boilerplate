@@ -7,12 +7,12 @@
             <div class="row">
               <div class="col-6 col-sm-3 text-center">
                 <a href="https://www.creativeprincipals.com/" target="_blank">
-                  <img src="~@/assets/creative.png">
+                  <img src="~@/assets/creative-vertical.png">
                 </a>
               </div>
               <div class="col-6 col-sm-3 text-center">
                 <a href="https://www.producers-group.com" target="_blank">
-                  <img src="~@/assets/producers.png">
+                  <img src="~@/assets/producers-vertical.png">
                 </a>
               </div>
               <div class="col-6 col-sm-3 text-center">
@@ -39,7 +39,9 @@
       </div>
     </div>
     <div class="d-flex justify-content-center pb-x2 align-items-start">
-      <img class="footer-logo" src="~@/assets/askbuzz-transparent.png">
+      <router-link to="/">
+        <img class="footer-logo" src="~@/assets/askbuzz-transparent.png">
+      </router-link>
     </div>
   </div>
 </template>

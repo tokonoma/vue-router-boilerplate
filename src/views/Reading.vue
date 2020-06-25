@@ -8,14 +8,10 @@
             back
           </router-link>
         </div>
-        <h1 class="text-center mb-x4">Some Reading</h1>
-        <div class="d-flex justify-content-center">
-          <Buzz medMax />
-        </div>
         <div class="d-flex justify-content-center align-items-start">
-          <img class="mb-x1 info-img" src="~@/assets/waltsrevolution.jpg">
+          <img class="mb-x1 info-img" src="~@/assets/wr.jpg">
         </div>
-        <h2 class="mb-x3">
+        <h2 class="mb-x3 text-center italic">
           Walt’s Revolution By the Numbers
         </h2>
         <div class="d-flex justify-content-center mb-x3 align-items-start">
@@ -24,12 +20,12 @@
           </a>
         </div>
         <p class="mb-x12">
-          BUY ON AMAZON: As one Amazon reviewer put it, Walt's Revolution! By The Numbers is the story of Harrison Alan Price and the companies he worked for and started. Buzz writes about six "waves" of development sparked by Disneyland.  "Walt's Revolution!" has pages of numbers--they seemed more like the pages of photos to me, eye candy. Not that the math had any flaws I could see (other than the possibility that the wrong numbers were displayed--you have to watch your base assumptions!), but this book is more a text on creative mind set than a manual on statistical analysis. "Walt's Revolution!" is both history and "how to"--yet I didn't find it boring to read. This is also and insider's look at the nuts and bolts of the entertainment industry.
+          As one Amazon reviewer put it, "<span class="italic">Walt's Revolution! By The Numbers</span> is the story of Harrison Alan Price and the companies he worked for and started. Buzz writes about six "waves" of development sparked by Disneyland. <span class="italic">Walt's Revolution!</span> has pages of numbers, but this book is more a text on creative mind set than a manual on statistical analysis. <span class="italic">Walt's Revolution!</span> is both history and "how to"&mdash;yet I didn't find it boring to read. This is also and insider's look at the nuts and bolts of the entertainment industry."
         </p>
         <div class="d-flex justify-content-center align-items-start">
-          <img class="mb-x1 info-img" src="~@/assets/buzzstories.jpg">
+          <img class="mb-x1 info-img" src="~@/assets/bs.jpg">
         </div>
-        <h2 class="mb-x3">
+        <h2 class="mb-x3 text-center italic">
           Buzz Stories at Thirty Thousand Feet
         </h2>
         <div class="d-flex justify-content-center mb-x3 align-items-start">
@@ -38,8 +34,16 @@
           </a>
         </div>
         <p class="mb-x6">
-          BUY ON AMAZON: Harrison “Buzz” Price was a true Disney Legend and his son David Price has now written the ultimate professional and personal tribute to his father and mentor. Part memoir, part consulting primer, and part love story, “Buzz Stories at Thirty Thousand Feet” contains stories written by those with whom he shared his intelligence, humor, passion and wit. It brings you closer to understanding the birth of an industry and a life lived The Buzz Way.
+          Harrison “Buzz” Price was a true Disney Legend and his son David Price has now written the ultimate professional and personal tribute to his father and mentor. Part memoir, part consulting primer and part love story, <span class="italic">Buzz Stories at Thirty Thousand Feet</span> contains stories written by those with whom he shared his intelligence, humor, passion and wit. It brings you closer to understanding the birth of an industry and a life lived "The Buzz Way".
         </p>
+        <div class="d-flex justify-content-center mt-x5 align-items-start">
+          <div class="speech-bubble">
+            That's all she wrote...
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <Buzz medMax />
+        </div>
       </main>
     </div>
     <AppFooter />
