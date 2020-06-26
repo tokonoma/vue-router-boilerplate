@@ -171,54 +171,52 @@
             <i class="fas fa-arrow-down mr-x4"></i> More Questions <i class="fas fa-arrow-down ml-x4"></i>
           </div>
           <!-- vertical center with align-items-center -->
-          <div class="more-questions-circles d-flex justify-content-center">
-            <div>
+          <div class="more-questions-circles">
+            <div class="d-flex justify-content-center">
               <div class="speech-bubble">
                 Life is too short to work on something doomed to fail.
               </div>
+            </div>
+            <div class="d-flex justify-content-center">
               <Buzz medMax />
             </div>
             <BuzzCircle
-              size="180px"
               question="What will be our overall theoretical hourly capacity?"
-              questionSize="18px"
               :answer="formatNumber(results.hourlyCapacity)"
               units="guests"
-              answerSize="32px"
-              top="40px"
-              left="10%"
+              top="20%"
+              left="24px"
               dark
             />
             <BuzzCircle
-              size="180px"
               question="How many seats for F&amp;B will we need?"
-              questionSize="18px"
               :answer="formatNumber(results.foodSeats)"
               units="seats"
-              answerSize="32px"
-              bottom="200px"
-              left="0px"
+              bottom="20%"
+              left="12px"
+            />
+            <BuzzCircle
+              question="How big does our attraction need to be?"
+              :answer="formatNumber(results.attractionSize, false, true)"
+              :units="measureValue"
+              top="22%"
+              right="12px"
+            />
+            <BuzzCircle
+              question="How much space will we need for parking?"
+              :answer="formatNumber(results.parkingSpace, false, true)"
+              :units="measureValue"
+              bottom="20%"
+              right="24px"
               dark
             />
             <BuzzCircle
-              size="180px"
-              question="How big does our attraction need to be?"
-              questionSize="18px"
-              :answer="formatNumber(results.attractionSize, false, true)"
-              :units="measureValue"
-              answerSize="32px"
-              top="220px"
-              right="0px"
-            />
-            <BuzzCircle
-              size="180px"
-              question="How much space will we need for parking?"
-              questionSize="18px"
-              :answer="formatNumber(results.parkingSpace, false, true)"
-              :units="measureValue"
-              answerSize="32px"
-              bottom="24px"
-              right="10%"
+              question="What's my rough budget?"
+              :answer="'$' + formatNumber(results.estBudget, true, false)"
+              :units="null"
+              bottom="0px"
+              center
+              dark
             />
           </div>
           <div class="d-flex justify-content-center mt-x4">
@@ -376,7 +374,8 @@ export default {
         attractionSize: 0,
         totalRideCount: 0,
         parkingSpace: 0,
-        foodSeats: 0
+        foodSeats: 0,
+        estBudget: 0
       },
       buzzQuotes: [
         'Let me ask you a few questions first, okay?',
@@ -434,17 +433,22 @@ export default {
         }
         this.results.peakDesignDay = this.results.designDay * lengthPercentage
         let themeDivider = 0
+        let budgetMultipler = 0
         switch (this.themeValue) {
           case 'ride-based':
-            themeDivider = 30
+            themeDivider = 40
+            budgetMultipler = 200
             break
           case 'mixed':
-            themeDivider = 45
+            themeDivider = 50
+            budgetMultipler = 350
             break
           case 'story-based':
-            themeDivider = 60
+            themeDivider = 75
+            budgetMultipler = 500
             break
         }
+        this.results.estBudget = this.results.desiredAttendance * budgetMultipler
         this.results.hourlyCapacity = (60 / themeDivider) * this.results.designDay
         this.results.attractionSize = this.results.designDay / 400
         let parkingPercentage = 0
@@ -643,7 +647,7 @@ export default {
   }
   .more-questions-circles{
     position: relative;
-    height: 660px;
+    height: 520px;
   }
 
   // media queries
@@ -663,6 +667,9 @@ export default {
           width: 260px;
         }
       }
+    }
+    .more-questions-circles{
+      height: 660px;
     }
   }
 

@@ -1,7 +1,7 @@
 <template>
   <div
     class="buzz-circle"
-    :class="{ dark: dark }"
+    :class="{ dark: dark, center: center }"
     :style="{
       top: top,
       bottom: bottom,
@@ -16,13 +16,13 @@
     @click="toggleAnswer()"
   >
     <template v-if="!decorative">
-      <div class="text-box no-select" :style="{fontSize: answerSize}" v-if="showAnswer">
+      <div class="text-box no-select answer" :style="{fontSize: answerSize}" v-if="showAnswer">
         {{ answer }}
-        <div class="answer-units">
+        <div class="answer-units" v-if="units">
           {{ units }}
         </div>
       </div>
-      <div class="text-box no-select" :style="{fontSize: questionSize}" v-else>
+      <div class="text-box no-select question" :style="{fontSize: questionSize}" v-else>
         {{ question }}
       </div>
     </template>
@@ -42,7 +42,7 @@ export default {
   props: {
     size: {
       type: String,
-      default: '200px'
+      default: ''
     },
     question: {
       type: String,
@@ -54,11 +54,11 @@ export default {
     },
     answerSize: {
       type: String,
-      default: '20px'
+      default: ''
     },
     questionSize: {
       type: String,
-      default: '16px'
+      default: ''
     },
     dark: {
       type: Boolean,
@@ -66,19 +66,19 @@ export default {
     },
     top: {
       type: String,
-      default: 'auto'
+      default: ''
     },
     bottom: {
       type: String,
-      default: 'auto'
+      default: ''
     },
     left: {
       type: String,
-      default: 'auto'
+      default: ''
     },
     right: {
       type: String,
-      default: 'auto'
+      default: ''
     },
     z: {
       type: String,
@@ -90,15 +90,19 @@ export default {
     },
     marginLeft: {
       type: String,
-      default: '0'
+      default: ''
     },
     marginRight: {
       type: String,
-      default: '0'
+      default: ''
     },
     units: {
       type: String,
       default: 'units'
+    },
+    center: {
+      type: Boolean,
+      default: false
     }
   },
   watch: {},
@@ -121,15 +125,23 @@ export default {
   display: flex;
   align-items: center;
   cursor: pointer;
+  // mobile
+  height: 120px;
+  width: 120px;
   .text-box{
     text-align: center;
     color: #51779B;
-    font-size: 16px;
     font-weight: 500;
     width: 100%;
     padding:12px;
+    &.question{
+      font-size: 14px;
+    }
+    &.answer{
+      font-size: 12px;
+    }
     .answer-units{
-      font-size: 18px;
+      font-size: 12px;
       font-weight: 500;
     }
   }
@@ -139,11 +151,39 @@ export default {
       color: #fff;
     }
   }
+  &.center{
+    margin-left: -60px;
+    left: 50%;
+  }
 }
 
 // media queries
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
+  .buzz-circle{
+    height: 180px;
+    width: 180px;
+    .text-box{
+      text-align: center;
+      color: #51779B;
+      font-weight: 500;
+      width: 100%;
+      padding:12px;
+      &.question{
+        font-size: 16px;
+      }
+      &.answer{
+        font-size: 20px;
+      }
+      .answer-units{
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+    &.center{
+      margin-left: -90px;
+    }
+  }
 }
 
 // Medium devices (tablets, 768px and up)
