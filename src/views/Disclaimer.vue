@@ -117,13 +117,13 @@
             <div class="pl-x2">
               <ul class="reset">
                 <li class="fontweight-medium mb-x1">
-                  Ride: 30 minutes
+                  Ride: 40 minutes
                 </li>
                 <li class="fontweight-medium mb-x1">
-                  Mixed: 45 minutes
+                  Mixed: 50 minutes
                 </li>
                 <li class="fontweight-medium mb-x1">
-                  Story-Driven: 60 minutes
+                  Story-Driven: 75 minutes
                 </li>
               </ul>
             </div>
