@@ -6,8 +6,8 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-6 col-sm-3 text-center">
-                <a href="https://www.creativeprincipals.com/" target="_blank">
-                  <img src="~@/assets/creative-vertical.png">
+                <a href="https://www.linkedin.com/in/geoffthatcher/" target="_blank">
+                  <img src="~@/assets/creative.png">
                 </a>
               </div>
               <div class="col-6 col-sm-3 text-center">
