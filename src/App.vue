@@ -1,35 +1,8 @@
 <template>
   <div id="buzz-app">
-    <div v-if="loading" class="app-loader align-items-center justify-content-center align-items-start">
-      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-    </div>
-    <template v-else>
-      <router-view/>
-    </template>
+    <router-view/>
   </div>
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-      loading: true
-    }
-  },
-  components: {},
-  props: {},
-  watch: {},
-  created () {},
-  mounted () {
-    setTimeout(() => {
-      this.loading = false
-    }, 1000)
-  },
-  computed: {},
-  methods: {
-  }
-}
-</script>
 
 <style lang="scss">
 @import '@/styles/utilities.scss';
