@@ -94,7 +94,7 @@ export default {
   }
 }
 .footer-logo{
-  width: 48px;
+  width: 124px;
   height: auto;
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="buzz-home">
+  <div class="buzz-home" v-cloak>
     <div class="d-flex justify-content-center align-items-start">
       <main class="fixed-width-container">
         <div class="buzz-header">
@@ -15,7 +15,7 @@
         </div>
         <div class="d-flex">
           <div class="width-30">
-            <Buzz />
+            <Buzz :buzzType="currentBuzz" />
           </div>
           <div class="width-70 form-results-container">
             <!--  -->
@@ -178,7 +178,7 @@
               </div>
             </div>
             <div class="d-flex justify-content-center">
-              <Buzz medMax />
+              <Buzz buzzType="doodling" medMax />
             </div>
             <BuzzCircle
               question="What will be our overall theoretical hourly capacity?"
@@ -327,7 +327,7 @@ export default {
           style: markStyle
         },
         'public transportation': {
-          label: 'public\rtransportation',
+          label: 'public \rtransportation',
           style: markStyle
         }
       },
@@ -381,7 +381,8 @@ export default {
         'Let me ask you a few questions first, okay?',
         'Remember, you don’t build the church for Easter Sunday.'
       ],
-      currentQuote: ''
+      currentQuote: '',
+      currentBuzz: 'wave'
     }
   },
   components: {
@@ -400,9 +401,6 @@ export default {
         this.results.desiredAttendance = this.attendanceValue
         this.results.desiredAttendance = this.results.desiredAttendance.replace(/\D/g, '')
         this.results.desiredAttendance = parseInt(this.results.desiredAttendance)
-        // scroll back to top
-        this.currentQuote = this.buzzQuotes[1]
-        window.scrollTo({ top: 0, behavior: 'smooth' })
         let peakMonthPercent = 0
         switch (this.seasonalValue) {
           case 'yes':
@@ -465,8 +463,12 @@ export default {
         }
         this.results.parkingSpace = (this.results.designDay * parkingPercentage) / 3.2 / 120
         this.results.foodSeats = (this.results.designDay * 0.95) / 3 / 2
+        // set buzz for rersults
+        this.currentQuote = this.buzzQuotes[1]
+        this.currentBuzz = 'thinking'
         // show results
         this.showResults = true
+        window.scrollTo({ top: 0, behavior: 'smooth' })
       } else {
         this.formError = true
       }
@@ -474,6 +476,7 @@ export default {
     editInput () {
       this.showResults = false
       this.currentQuote = this.buzzQuotes[0]
+      this.currentBuzz = 'wave'
     },
     formatAttendanceDuringInput () {
       if (this.attendanceValue) {
@@ -523,6 +526,7 @@ export default {
       this.attendanceValue = null
       this.showResults = false
       this.currentQuote = this.buzzQuotes[0]
+      this.currentBuzz = 'wave'
       this.results = {
         peakMonth: 0,
         peakWeek: 0,
@@ -564,6 +568,8 @@ export default {
   }
   .speech-bubble{
     width: 160px;
+    top: -12px;
+    left: 24px;
   }
   .width-30{
     width: 30%;

@@ -1,6 +1,6 @@
 <template>
-  <div class="about info-page pt-x4">
-    <div class="d-flex justify-content-center align-items-start">
+  <div class="about pt-x4">
+    <div class="d-flex justify-content-center align-items-start info-page">
       <main class="fixed-width-text">
         <div class="back-container">
           <router-link to="/" class="back-button">
@@ -12,13 +12,13 @@
         <p>
           According to his son David Price, Harrison “Buzz” Price was excellent at crunching numbers in his head. Not everyone of course can accomplish such a task, but he was a wizard at it. This is a great gift to have when you’re in the middle of a planning session and you’re putting numbers up on the white board to stimulate and help focus discussion. He could also pause and draw you into the calculus.
         </p>
-        <div class="d-flex justify-content-center mt-x5 align-items-start">
+        <div class="d-flex justify-content-center mt-x5 align-items-start mb-x2">
           <div class="speech-bubble">
             {{ this.buzzQuotes[this.currentQuoteIndex] }}
           </div>
         </div>
         <div class="d-flex justify-content-center align-items-start">
-          <Buzz medMax @buzzClicked="changeQuote()" />
+          <Buzz medMax buzzType="doodling" @buzzClicked="changeQuote()" />
         </div>
         <p>
           Buzz often said, “It’s all about the numbers” and at his passing in 2010 at 89 years of age, he certainly had not changed that perspective. For industry practitioners that worked closely with him, we recall these as “Buzz Moments” when we were able to see the numbers as he saw them in real time.
@@ -84,6 +84,9 @@ export default {
 <style scoped lang="scss">
 .speech-bubble{
   width: 280px;
+  &:after {
+    margin-left: 16px;
+  }
 }
 // media queries
 // Small devices (landscape phones, 576px and up)

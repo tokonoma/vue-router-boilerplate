@@ -1,6 +1,6 @@
 <template>
-  <div class="disclaimer info-page pt-x4">
-    <div class="d-flex justify-content-center">
+  <div class="disclaimer pt-x4">
+    <div class="d-flex justify-content-center info-page">
       <main class="fixed-width-text">
         <div class="back-container">
           <router-link to="/" class="back-button">
@@ -8,38 +8,40 @@
             back
           </router-link>
         </div>
-        <h1 class="text-center mb-x4">Roller Coaster Math Disclaimer</h1>
+        <h1 class="text-center mb-x4">Roller Coaster Math Disclaimer*</h1>
         <p>
-          The Roller Coaster Math helping designers and developers figure out design day numbers is not secret. In fact, Buzz Price published the formulas in his book <span class="italic">Walt’s Revolution By the Numbers</span>. Different versions of these formulas can be found on numerous blogs, posts and articles online.
-        </p>
-        <div class="d-flex justify-content-center mt-x5 align-items-start">
-          <div class="speech-bubble">
-            Knowing the right answer and convincing the client are two different things.
-          </div>
-        </div>
-        <div class="d-flex justify-content-center align-items-start">
-          <Buzz medMax />
-        </div>
-        <p>
-          There are, no doubt, hundreds of consultants who have this math plugged into Excel or Google Sheets. While Roller Coaster Math will continue to be tweaked, the principles and philosophies were all invented and pioneered by Buzz Price. And so, Ask.Buzz democratizes Roller Coaster Math by creating a web site that allows the themed entertainment industry to quickly crunch numbers as if they were working with Buzz during a charrette. Even though he loved charrettes, Buzz also knew there were limitations. In fact, in his book, he wrote:
+          There’s a reason why we have an asterisk on this page! As Buzz Price wrote in his Book <span class="italic">Walt’s Revolution! By The Numbers</span>...
         </p>
         <div class="quote mb-x4">
           <p>
-            &#x201C;One limitation of the charrette process is that it is the ultimate version of &#x2018;quick and dirty&#x2019; consulting. One day of concentrated psychoanalysis of a project is not going to produce a finished masterplan.&#x201D;
+            We have worked hard to assemble imperfect data, that myriad influences above and beyond force majeure work against the concept predictability, and therefore our best efforts in certain cases do not correspond to the reality of life on this planet.
           </p>
         </div>
         <p>
-          The same is true for this web site.
+          In other words, this web site is simply a tool for the people who design attractions. It is NOT intended to be the basis for any investment decisions because the math here leaves out so many variables that a feasibility expert would consider. Things such as location, market size, available public transportation, demographics, competition and the list could go on and on.
         </p>
         <p>
-          Ask.Buzz is not intended to replace feasibility consultants and experts. This isn’t complete or comprehensive. It doesn’t currently include museum or educational attractions. Our intent was to build a tool that we’d all want to use during charrettes and in the early stages of a project as the concepts are being envisioned. Our goal was to honor the man who invented the feasibility industry by sharing his knowledge with a new generation.
+          You can crunch the numbers for a ride-based seasonal attraction with a desired attendance of 1 million where guests will stay 5 hours and arrive primarily by car, but that doesn’t mean if you place the park 150 miles west of Bakersfield, California your peak week will be 56,434.
         </p>
         <p>
-          While Ask.Buzz can help you as a quick reference, please talk to a real professional.
+          While Ask.Buzz can help you as a quick reference to get some numbers that are in the ballpark, please talk to a real professional because they can tell you whether you should build that ballpark in the first place!
+        </p>
+        <p>
+          In the end, this “Roller Coaster Math” helping designers and planners figure out design day numbers is not secret. Buzz Price published the formulas in his book <span class="italic">Walt’s Revolution! By the Numbers</span>. Different versions of these formulas can be found on numerous blogs, posts and articles online.
+        </p>
+        <p>
+          There are, no doubt, hundreds of consultants who have this math plugged into Excel or Google Sheets. While Roller Coaster Math will continue to be tweaked, the principles and philosophies were all invented and pioneered by Buzz Price. And so, Ask.Buzz democratizes Roller Coaster Math by creating a web site that allows the themed entertainment industry to quickly crunch numbers as if they were working with Buzz during a charrette. In fact, we hope this tool may be useful in convincing some clients that they should reach out to feasibility experts.
+        </p>
+        <p>
+          However, there is a reason why this site was developed by those who create and produce attractions. Our intent was to build a tool that we’d all want to use during charrettes and in the early stages of a project as the concepts are being envisioned. Our goal was to honor the man who invented the feasibility industry by sharing his knowledge with a new generation.
+        </p>
+        <p>
+          Again, it’s worth saying one more time: Ask.Buzz is not intended to replace feasibility consultants and experts.
         </p>
         <p>
           Finally, as this is a work in progress, the math may be tweaked from time-to-time, but at the launch, here are the formulas we used:
         </p>
+        <!-- formulas -->
         <div class="mb-x4 mt-x4">
           <h2 class="mb-x1">
             Peak Month
@@ -142,7 +144,25 @@
           <div class="mb-x4">
             <div class="italic mb-x1">
               Design Day Attendance / 400 Acres
+              <br>
+              (not including parking and back of house)
             </div>
+          </div>
+          <h2 class="mb-x1">
+            Rough Budget
+          </h2>
+          <div class="mb-x4 pl-x2">
+            <ul class="reset">
+              <li class="fontweight-medium mb-x1">
+                Ride Park: $200 per person on desired attendance
+              </li>
+              <li class="fontweight-medium mb-x1">
+                Mixed Park: $350 per person on desired attendance
+              </li>
+              <li class="fontweight-medium mb-x1">
+                Story Park: $500 per person on desired attendance
+              </li>
+            </ul>
           </div>
           <h2 class="mb-x1">
             Parking Area Requirement
@@ -183,6 +203,14 @@
             </div>
           </div>
         </div>
+        <div class="d-flex justify-content-center mt-x5 align-items-start mb-x2">
+          <div class="speech-bubble">
+            Knowing the right answer and convincing the client are two different things.
+          </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-start">
+          <Buzz buzzType="shrug" medMax />
+        </div>
       </main>
     </div>
     <AppFooter />
@@ -215,6 +243,9 @@ export default {
 <style scoped lang="scss">
 .speech-bubble{
   width: 280px;
+  &:after {
+    margin-left: 16px;
+  }
 }
 // media queries
 // Small devices (landscape phones, 576px and up)

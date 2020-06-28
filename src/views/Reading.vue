@@ -1,6 +1,6 @@
 <template>
-  <div class="reading info-page pt-x4">
-    <div class="d-flex justify-content-center">
+  <div class="reading pt-x4">
+    <div class="d-flex justify-content-center info-page">
       <main class="fixed-width-text">
         <div class="back-container">
           <router-link to="/" class="back-button">
@@ -20,7 +20,7 @@
           </a>
         </div>
         <p class="mb-x12">
-          As one Amazon reviewer put it, "<span class="italic">Walt's Revolution! By The Numbers</span> is the story of Harrison Alan Price and the companies he worked for and started. Buzz writes about six "waves" of development sparked by Disneyland. <span class="italic">Walt's Revolution!</span> has pages of numbers, but this book is more a text on creative mind set than a manual on statistical analysis. <span class="italic">Walt's Revolution!</span> is both history and "how to"&mdash;yet I didn't find it boring to read. This is also and insider's look at the nuts and bolts of the entertainment industry."
+          As one Amazon reviewer put it, <span class="italic">Walt's Revolution! By the Numbers</span> is the story of Harrison Alan Price and the companies he worked for and started. Buzz writes about six "waves" of development sparked by Disneyland. <span class="italic">Walt's Revolution! By the Numbers</span> has pages of numbers, but this book is more a text on creative mind set than a manual on statistical analysis. <span class="italic">Walt's Revolution! By the Numbers</span> is both history and "how to"&mdash;yet I didn't find it boring to read. This is also and insider's look at the nuts and bolts of the entertainment industry."
         </p>
         <div class="d-flex justify-content-center align-items-start">
           <img class="mb-x1 info-img" src="~@/assets/bs.jpg">
@@ -36,13 +36,13 @@
         <p class="mb-x6">
           Harrison “Buzz” Price was a true Disney Legend and his son David Price has now written the ultimate professional and personal tribute to his father and mentor. Part memoir, part consulting primer and part love story, <span class="italic">Buzz Stories at Thirty Thousand Feet</span> contains stories written by those with whom he shared his intelligence, humor, passion and wit. It brings you closer to understanding the birth of an industry and a life lived "The Buzz Way".
         </p>
-        <div class="d-flex justify-content-center mt-x5 align-items-start">
+        <div class="d-flex justify-content-center mt-x5 align-items-start mb-x2">
           <div class="speech-bubble">
             That's all she wrote...
           </div>
         </div>
         <div class="d-flex justify-content-center">
-          <Buzz medMax />
+          <Buzz buzzType="tie" medMax />
         </div>
       </main>
     </div>
@@ -76,6 +76,11 @@ export default {
 <style scoped lang="scss">
 .reading.info-page h2{
   font-size:24px;
+}
+.speech-bubble{
+  &:after {
+    margin-left: 16px;
+  }
 }
 // media queries
 // Small devices (landscape phones, 576px and up)

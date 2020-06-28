@@ -21,7 +21,7 @@ const router = new Router({
     {
       path: '/buzz',
       name: 'buzz',
-      component: () => import('./views/Buzz.vue')
+      component: () => import('./views/AboutBuzz.vue')
     },
     {
       path: '/creators',

@@ -1,12 +1,46 @@
 <template>
   <div id="buzz-app">
-    <router-view/>
+    <div v-if="loading" class="app-loader align-items-center justify-content-center align-items-start">
+      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    </div>
+    <template v-else>
+      <router-view/>
+    </template>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      loading: true
+    }
+  },
+  components: {},
+  props: {},
+  watch: {},
+  created () {},
+  mounted () {
+    setTimeout(() => {
+      this.loading = false
+    }, 1000)
+  },
+  computed: {},
+  methods: {
+  }
+}
+</script>
 
 <style lang="scss">
 @import '@/styles/utilities.scss';
 @import '@/styles/bs-grid';
+
+.app-loader{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  color: #51779B;
+}
 
 body{
   font-family: 'Roboto', sans-serif;
@@ -122,22 +156,20 @@ input[type=email] {
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
-  top: -12px;
-  left: 24px;
-}
-.speech-bubble:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border: 16px solid transparent;
-  border-top-color: #51779B;
-  border-bottom: 0;
-  border-left: 0;
-  margin-left: -16px;
-  margin-bottom: -16px;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 16px solid transparent;
+    border-top-color: #51779B;
+    border-bottom: 0;
+    border-left: 0;
+    margin-left: -16px;
+    margin-bottom: -16px;
+  }
 }
 //info-pages
 .back-container{

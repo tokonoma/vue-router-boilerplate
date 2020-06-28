@@ -1,6 +1,6 @@
 <template>
-  <div class="creators info-page pt-x4">
-    <div class="d-flex justify-content-center align-items-start">
+  <div class="creators pt-x4">
+    <div class="d-flex justify-content-center align-items-start info-page">
       <main class="fixed-width-text">
         <div class="back-container">
           <router-link to="/" class="back-button">
@@ -25,7 +25,7 @@
           However, all of us behind this project were busy working on other projects. As the saying goes, “The problem with working on projects in your spare time is that you never have any spare time!”
         </p>
         <p>
-          Then COVID-19 hit, we decided to convert the app concept into a web site and get it launched before the original Disneyland reopened. Please feel free to email any of us if you have any questions or need information:
+          Then COVID-19 hit, we decided to convert the app concept into a web site and get it launched before the original Disneyland reopened. Please feel free to email any of us:
         </p>
         <div class="mb-x4 mt-x4">
           <h2>
@@ -57,11 +57,14 @@
           </h2>
           <p><a href="mailto:vlad@backpackcreative.com">Vlad Perelman</a>, Managing Director, Backpack Creative</p>
         </div>
-        <div class="">
+        <div class="mb-x4">
           <h2>
             Designer &amp; Illustrator
           </h2>
           <p><a href="mailto:zthatcher@creativeprincipals.com">Zoe Thatcher</a>, Designer &amp; Illustrator, Creative Principals</p>
+        </div>
+        <div class="">
+          <p><a href="mailto:gthatcher@creativeprincipals.com,dprice@PriceLeisureGroup.com,tyfor@aol.com,bob.chambers@producers-group.com,vlad@backpackcreative.com,zthatcher@creativeprincipals.com">Email All</a></p>
         </div>
       </main>
     </div>
