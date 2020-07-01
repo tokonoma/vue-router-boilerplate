@@ -17,11 +17,19 @@
             We have worked hard to assemble imperfect data, that myriad influences above and beyond force majeure work against the concept predictability, and therefore our best efforts in certain cases do not correspond to the reality of life on this planet.
           </p>
         </div>
+        <div class="d-flex justify-content-center align-items-start mb-x2">
+          <div class="speech-bubble">
+            Knowing the right answer and convincing the client are two different things.
+          </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-start mb-x2">
+          <Buzz buzzType="shrug" medMax />
+        </div>
         <p>
           In other words, this web site is simply a tool for the people who design attractions. It is NOT intended to be the basis for any investment decisions because the math here leaves out so many variables that a feasibility expert would consider. Things such as location, market size, available public transportation, demographics, competition and the list could go on and on.
         </p>
         <p>
-          You can crunch the numbers for a ride-based seasonal attraction with a desired attendance of 1 million where guests will stay 5 hours and arrive primarily by car, but that doesn’t mean if you place the park 150 miles west of Bakersfield, California your peak week will be 56,434.
+          You can crunch the numbers for a ride-based seasonal attraction with a desired attendance of 1 million where guests will stay 5 hours and arrive primarily by car, but that doesn’t mean if you place the park 150 miles east of Bakersfield, California your peak week will be 56,434.
         </p>
         <p>
           While Ask.Buzz can help you as a quick reference to get some numbers that are in the ballpark, please talk to a real professional because they can tell you whether you should build that ballpark in the first place!
@@ -202,14 +210,6 @@
               </ul>
             </div>
           </div>
-        </div>
-        <div class="d-flex justify-content-center mt-x5 align-items-start mb-x2">
-          <div class="speech-bubble">
-            Knowing the right answer and convincing the client are two different things.
-          </div>
-        </div>
-        <div class="d-flex justify-content-center align-items-start">
-          <Buzz buzzType="shrug" medMax />
         </div>
       </main>
     </div>

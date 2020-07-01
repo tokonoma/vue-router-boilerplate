@@ -22,7 +22,7 @@
             <!-- form -->
             <!--  -->
             <div class="main-form" v-if="!showResults">
-              <h2>Will your attraction be seasonal?</h2>
+              <h2>Will your theme park’s attendance be seasonal?</h2>
               <h3>{{ seasonalValue }}</h3>
               <vue-slider
                 v-model="seasonalValue"
@@ -35,7 +35,7 @@
                 :tooltip="'none'"
                 class="mb-x10"
               ></vue-slider>
-              <h2>What will be the intended length of stay?</h2>
+              <h2>What will be the average length of stay?</h2>
               <h3>{{ lengthValue }}</h3>
               <vue-slider
                 v-model="lengthValue"
@@ -378,7 +378,7 @@ export default {
         estBudget: 0
       },
       buzzQuotes: [
-        'Let me ask you a few questions first, okay?',
+        'Remember, our best efforts in certain cases do not correspond to the reality of life on this planet.',
         'Remember, you don’t build the church for Easter Sunday.'
       ],
       currentQuote: '',
