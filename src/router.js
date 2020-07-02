@@ -17,26 +17,6 @@ const router = new Router({
       path: '/about',
       name: 'about',
       component: () => import('./views/About.vue')
-    },
-    {
-      path: '/buzz',
-      name: 'buzz',
-      component: () => import('./views/AboutBuzz.vue')
-    },
-    {
-      path: '/creators',
-      name: 'creators',
-      component: () => import('./views/Creators.vue')
-    },
-    {
-      path: '/disclaimer',
-      name: 'disclaimer',
-      component: () => import('./views/Disclaimer.vue')
-    },
-    {
-      path: '/reading',
-      name: 'reading',
-      component: () => import('./views/Reading.vue')
     }
   ],
   scrollBehavior (to, from, savedPosition) {

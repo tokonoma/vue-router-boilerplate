@@ -1,36 +1,28 @@
 <template>
-  <div class="about">
-    <MyComponent />
-    <router-link to="/">Home</router-link>
+  <div class="my-component">
+    Hello World
   </div>
 </template>
 
 <script>
-import MyComponent from '@/components/MyComponent.vue'
-
 export default {
-  name: 'about',
   data () {
     return {
-      hello: 'world'
     }
   },
-  components: {
-    MyComponent
-  },
+  components: {},
+  props: {},
+  watch: {},
   created () {},
+  mounted () {},
+  computed: {},
   methods: {
-    myFunction () {
-      console.log('function called')
-    },
-    mySecondFunction () {
-      console.log('my second function called')
-    }
   }
 }
 </script>
 
 <style scoped lang="scss">
+
 // Media Queries
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
